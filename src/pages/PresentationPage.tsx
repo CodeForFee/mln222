@@ -14,12 +14,12 @@ export default function PresentationPage() {
                             Bài thuyết trình
                             <span className="w-8 h-[1px] bg-[var(--color-gold)]" />
                         </span>
-                        <h1 className="text-white mb-4">
+                        {/* <h1 className="text-white mb-4">
                             <span className="text-gradient-gold">Sống hay Tồn tại?</span>
-                        </h1>
-                        <p className="text-[var(--color-gray-400)] max-w-2xl mx-auto">
+                        </h1> */}
+                        {/* <p className="text-[var(--color-gray-400)] max-w-2xl mx-auto">
                             Khám phá bài thuyết trình về triết học Mác-Lênin thông qua flipbook tương tác.
-                        </p>
+                        </p> */}
                     </div>
 
                     {/* Flipbook iframe container */}

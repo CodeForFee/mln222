@@ -15,7 +15,7 @@ const cards = [
         description: 'Tham gia trò chơi quiz thú vị để kiểm tra và củng cố kiến thức về triết học Mác – Lênin.',
         icon: PuzzlePieceIcon,
         color: 'crimson',
-        link: 'https://mln2projectm.vercel.app/',
+        link: 'https://693af87714834c90c667069f--mln2-team5.netlify.app',
     },
     {
         id: 'curriculum',

@@ -190,11 +190,16 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
             border: 1px solid #ddd;
             width: 95%;
-            height: 250px;
+            height: 180px;
+            /* Reduced from 250px to prevent overflow */
+            max-height: 35vh;
+            /* Responsive constraint */
             overflow: hidden;
             display: flex;
             justify-content: center;
             align-items: center;
+            margin: 0 auto;
+            /* Center it properly */
         }
 
         .img-frame img {
@@ -340,7 +345,7 @@
                 <div class="page front cover-page">
                     <div
                         style="border: 1px solid var(--gold-color); padding: 30px; width: 85%; height: 85%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                        <p style="letter-spacing: 2px; font-size: 0.9rem;">KINH TẾ CHÍNH TRỊ MÁC - LÊNIN</p>
+                        <!-- <p style="letter-spacing: 2px; font-size: 0.9rem;">KINH TẾ CHÍNH TRỊ MÁC - LÊNIN</p> -->
                         <div style="width: 40px; height: 2px; background: var(--gold-color); margin: 20px 0;"></div>
                         <h1 style="font-size: 1.6rem; line-height: 1.3; padding: 0 5px; margin-bottom: 20px;">
                             GIÁ TRỊ THẶNG DƯ
@@ -350,18 +355,23 @@
                             NỀN KINH TẾ THỊ TRƯỜNG
                         </h1>
                         <div style="width: 40px; height: 2px; background: var(--gold-color); margin: 20px 0;"></div>
-                        <p style="text-align: center; opacity: 0.9;">Nhóm Thuyết Trình - F4</p>
-                        <div class="img-container" style="margin-top: 20px; height: 180px;">
+                        <p style="text-align: center; opacity: 0.9;">Nhóm Thuyết Trình - Group 5</p>
+                        <div class="img-container" style="margin-top: 20px; height: 220px;">
                             <div class="img-frame"
                                 style="height: 100%; border: none; box-shadow: none; background: transparent;">
-                                <img src="assets/images/slide1.png" alt="Kinh tế tư bản"
-                                    style="opacity: 0.8; border-radius: 4px;">
+                                <img src="assets/images/cover_book.png" alt="Kinh tế tư bản"
+                                    style="opacity: 0.9; border-radius: 4px; box-shadow: 0 5px 15px rgba(0,0,0,0.3);">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="page back">
                     <h2>I. Nguồn Gốc Của Giá Trị Thặng Dư</h2>
+                    <div class="img-container">
+                        <div class="img-frame" style="height: 140px;"><img src="assets/images/origin_money.png"
+                                alt="Nguồn gốc của tiền" />
+                        </div>
+                    </div>
                     <h3>Tiền là gì?</h3>
                     <div class="highlight-box">
                         Tiền là sản vật cuối cùng của lưu thông hàng hóa, đồng thời cũng là hình thức biểu hiện đầu tiên
@@ -386,6 +396,10 @@
             <div class="leaf" id="leaf2">
                 <div class="page front">
                     <h2>II. Sự Vận Động Của Tiền</h2>
+                    <div class="img-container">
+                        <div class="img-frame"><img src="assets/images/money_formula.png"
+                                alt="Công thức chung của tư bản" /></div>
+                    </div>
                     <div class="formula-box">
                         Tiền thông thường: <strong>H - T - H</strong><br>
                         Tiền tư bản: <strong>T - H - T'</strong>
@@ -417,6 +431,10 @@
                 </div>
                 <div class="page back">
                     <h2>II. Sự Vận Động Của Tiền (tiếp)</h2>
+                    <div class="img-container">
+                        <div class="img-frame"><img src="assets/images/money_movement.png" alt="Sự vận động của tiền" />
+                        </div>
+                    </div>
                     <h3>Điểm khác nhau về bản chất bên ngoài:</h3>
                     <table>
                         <tr>
@@ -452,6 +470,10 @@
             <div class="leaf" id="leaf3">
                 <div class="page front">
                     <h2>II. Sự Vận Động (Bản chất bên trong)</h2>
+                    <div class="img-container">
+                        <div class="img-frame"><img src="assets/images/money_purpose.png"
+                                alt="Mục đích của lưu thông tư bản" /></div>
+                    </div>
                     <table>
                         <tr>
                             <th>Tiêu chí</th>
@@ -478,6 +500,10 @@
                 </div>
                 <div class="page back">
                     <h2>III. Hàng Hóa Sức Lao Động</h2>
+                    <div class="img-container">
+                        <div class="img-frame"><img src="assets/images/labor_power_def.png"
+                                alt="Hàng hóa sức lao động" /></div>
+                    </div>
                     <h3>Định nghĩa:</h3>
                     <ul>
                         <li><strong>Sức lao động:</strong> Toàn bộ năng lực thể chất và tinh thần trong cơ thể con người
@@ -498,6 +524,10 @@
             <div class="leaf" id="leaf4">
                 <div class="page front">
                     <h2>III. Thuộc Tính Hàng Hóa Sức Lao Động</h2>
+                    <div class="img-container">
+                        <div class="img-frame"><img src="assets/images/labor_attributes.png"
+                                alt="Thuộc tính hàng hóa sức lao động" /></div>
+                    </div>
                     <p>Hàng hóa sức lao động có 2 thuộc tính: <strong>Giá trị sử dụng</strong> và <strong>Giá
                             trị</strong></p>
                     <div class="highlight-box" style="background: rgba(0, 128, 0, 0.1); border-left-color: green;">
@@ -514,6 +544,10 @@
                 </div>
                 <div class="page back">
                     <h2>IV. Ví Dụ Thực Tế: Có Bị Bóc Lột?</h2>
+                    <div class="img-container">
+                        <div class="img-frame" style="height: 140px;"><img src="assets/images/example_exploitation.png"
+                                alt="Ví dụ về bóc lột" /></div>
+                    </div>
                     <div class="highlight-box">
                         Bạn là sinh viên làm nhân viên phục vụ quán trà sữa: <strong>30k/h</strong>, hợp đồng
                         <strong>4h/ngày</strong>, mỗi tuần được 2 ly trà sữa miễn phí.
@@ -535,6 +569,10 @@
             <div class="leaf" id="leaf5">
                 <div class="page front">
                     <h2>V. Định Nghĩa Giá Trị Thặng Dư</h2>
+                    <div class="img-container">
+                        <div class="img-frame"><img src="assets/images/surplus_def.png"
+                                alt="Định nghĩa giá trị thặng dư" /></div>
+                    </div>
                     <div class="highlight-box" style="font-style: normal;">
                         <strong>Giá trị thặng dư (m)</strong> là một bộ phận của giá trị mới dôi ra ngoài giá trị sức
                         lao động do công nhân tạo ra và bị nhà tư bản chiếm đoạt. Đó là <em>lao động không công</em> của
@@ -549,6 +587,9 @@
                 </div>
                 <div class="page back">
                     <h2>V. Tiền Công & Các Loại Tư Bản</h2>
+                    <div class="img-container">
+                        <div class="img-frame"><img src="assets/images/capital_types.png" alt="Các loại tư bản" /></div>
+                    </div>
                     <div class="highlight-box">
                         <strong>Tiền công:</strong> Là giá cả của hàng hóa sức lao động, là bộ phận giá trị mới do chính
                         người lao động tạo ra. <em>Người lao động tự trả công cho mình qua lao động của mình.</em>
@@ -579,18 +620,23 @@
             <div class="leaf" id="leaf6">
                 <div class="page front">
                     <h2>VI. Công Thức Giá Trị Thặng Dư</h2>
-                    <h3>1. Tỷ suất giá trị thặng dư (m')</h3>
-                    <p style="font-size: 0.85rem;">Thước đo tương đối thể hiện trình độ/cường độ bóc lột:</p>
-                    <div class="formula-box">
+                    <div class="img-container" style="margin: 5px 0;">
+                        <div class="img-frame" style="height: 140px;"><img src="assets/images/surplus_formulas.png"
+                                alt="Công thức giá trị thặng dư" /></div>
+                    </div>
+                    <h3 style="margin-bottom: 5px;">1. Tỷ suất giá trị thặng dư (m')</h3>
+                    <p style="font-size: 0.85rem; margin-bottom: 5px;">Thước đo tương đối thể hiện trình độ/cường độ bóc
+                        lột:</p>
+                    <div class="formula-box" style="padding: 10px; margin: 8px 0;">
                         m' = (m / v) × 100%
                     </div>
-                    <p style="font-size: 0.85rem;">Hoặc:</p>
-                    <div class="formula-box" style="font-size: 0.95rem;">
+                    <p style="font-size: 0.75rem; margin-bottom: 2px;">Hoặc:</p>
+                    <div class="formula-box" style="font-size: 0.95rem; padding: 10px; margin: 8px 0;">
                         m' = (Thời gian lao động thặng dư / Thời gian lao động tất yếu) × 100%
                     </div>
-                    <h3>2. Khối lượng giá trị thặng dư (M)</h3>
-                    <p style="font-size: 0.85rem;">Thước đo tuyệt đối thể hiện quy mô bóc lột:</p>
-                    <div class="formula-box">
+                    <h3 style="margin-bottom: 5px;">2. Khối lượng giá trị thặng dư (M)</h3>
+                    <p style="font-size: 0.85rem; margin-bottom: 5px;">Thước đo tuyệt đối thể hiện quy mô bóc lột:</p>
+                    <div class="formula-box" style="padding: 10px; margin: 8px 0;">
                         M = m' × V
                     </div>
                     <p style="font-size: 0.8rem;"><em>(V = Tổng tư bản khả biến = Tổng tiền công chi ra)</em></p>
@@ -598,6 +644,10 @@
                 </div>
                 <div class="page back">
                     <h2>VII. Các Phương Pháp Sản Xuất GTTD</h2>
+                    <div class="img-container">
+                        <div class="img-frame" style="height: 140px;"><img src="assets/images/surplus_methods.png"
+                                alt="Phương pháp sản xuất giá trị thặng dư" /></div>
+                    </div>
                     <h3 style="color: #8B0000;">1. Giá trị thặng dư tuyệt đối</h3>
                     <p style="font-size: 0.9rem;">Thu được bằng cách <strong>kéo dài ngày lao động</strong> vượt quá
                         thời gian lao động tất yếu, trong khi năng suất và giá trị sức lao động không đổi.</p>
@@ -619,6 +669,10 @@
             <div class="leaf" id="leaf7">
                 <div class="page front">
                     <h2>VIII. Tuần Hoàn & Chu Chuyển Tư Bản</h2>
+                    <div class="img-container">
+                        <div class="img-frame"><img src="assets/images/turnover.png"
+                                alt="Tuần hoàn và chu chuyển tư bản" /></div>
+                    </div>
                     <h3>Chu chuyển tư bản:</h3>
                     <p style="font-size: 0.9rem;">Là sự vận động của tư bản được xét là quá trình định kỳ, thường xuyên
                         lặp đi lặp lại và đổi mới theo thời gian.</p>
@@ -642,6 +696,11 @@
                 <div class="page back cover-page">
                     <div style="text-align: center;">
                         <h1 style="font-size: 2rem;">KẾT LUẬN</h1>
+                        <div class="img-container">
+                            <div class="img-frame" style="border:none; box-shadow:none; background:transparent;"><img
+                                    src="assets/images/conclusion.png" alt="Kết luận"
+                                    style="border-radius:4px; opacity:0.9;" /></div>
+                        </div>
                         <div style="width: 50px; height: 2px; background: var(--gold-color); margin: 20px auto;"></div>
                         <div style="text-align: left; padding: 0 20px; font-size: 0.95rem;">
                             <p>✓ Giá trị thặng dư là <strong>bản chất của sự bóc lột</strong> trong CNTB</p>

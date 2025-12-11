@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const navLinks = [
     { path: '/', label: 'Trang chủ' },
-    // { path: '/presentation', label: 'Thuyết trình' },
+    { path: '/presentation', label: 'Thuyết trình' },
     { path: '/games', label: 'Trò chơi' },
     { path: '/timeline', label: 'Dòng thời gian' },
     { path: '/gallery', label: 'Thư viện ảnh' },

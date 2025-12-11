@@ -6,7 +6,7 @@ import PhilosopherPage from './pages/PhilosopherPage';
 import GalleryPage from './pages/GalleryPage';
 import GamesPage from './pages/GamesPage';
 import AboutPage from './pages/AboutPage';
-// import PresentationPage from './pages/PresentationPage';
+import PresentationPage from './pages/PresentationPage';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         <Route path="/gallery" element={<GalleryPage />} />
         <Route path="/games" element={<GamesPage />} />
         <Route path="/about" element={<AboutPage />} />
-        {/* <Route path="/presentation" element={<PresentationPage />} /> */}
+        <Route path="/presentation" element={<PresentationPage />} />
       </Routes>
     </BrowserRouter>
   );
