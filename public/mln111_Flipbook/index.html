@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sống Hay Tồn Tại - Presentation</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --book-width: 500px;
+            --book-height: 720px;
+            --anim-speed: 1.6s;
+            --bg-color: #1a1a1a;
+            --paper-color: #fdfbf7;
+            --text-color: #2c2c2c;
+            --accent-color: #800000;
+            --gold-color: #b8860b;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            background-color: var(--bg-color);
+            background-image: radial-gradient(circle at center, #2c2c2c 0%, #000 100%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Lora', serif;
+            overflow: hidden;
+            perspective: 3000px;
+        }
+
+        /* --- CẤU TRÚC GÁY SÁCH --- */
+        .spine-anchor {
+            position: relative;
+            width: 0;
+            height: var(--book-height);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transform-style: preserve-3d;
+            transition: transform var(--anim-speed) ease;
+        }
+
+        /* TRẠNG THÁI START: Trang bìa (bên phải) được căn giữa */
+        .spine-anchor.start {
+            transform: translateX(-250px);
+        }
+
+        /* TRẠNG THÁI END: Trang cuối (bên trái) được căn giữa */
+        .spine-anchor.end {
+            transform: translateX(250px);
+        }
+
+        .book {
+            width: calc(var(--book-width) * 2);
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            transform-style: preserve-3d;
+        }
+
+        .leaf {
+            width: var(--book-width);
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: left center;
+            transition: transform var(--anim-speed) cubic-bezier(0.645, 0.045, 0.355, 1);
+            transform-style: preserve-3d;
+            cursor: pointer;
+        }
+
+        /* --- TRANG GIẤY (PAGE) --- */
+        .page {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: var(--paper-color);
+            color: var(--text-color);
+            overflow: hidden;
+            backface-visibility: hidden;
+            -webkit-backface-visibility: hidden;
+            padding: 40px 35px;
+            display: flex;
+            flex-direction: column;
+            border: 1px solid #ddd;
+        }
+
+        /* Mặt Trước - bên phải */
+        .page.front {
+            transform: rotateY(0deg);
+            border-radius: 0 10px 10px 0;
+            background-image: linear-gradient(to right, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 3%);
+            border-right: 2px solid #dcd0b3;
+            box-shadow: 3px 0 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Mặt Sau - bên trái */
+        .page.back {
+            transform: rotateY(180deg);
+            border-radius: 10px 0 0 10px;
+            background-image: linear-gradient(to left, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0) 3%);
+            border-left: 2px solid #dcd0b3;
+            box-shadow: -3px 0 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* --- HIỆU ỨNG CONG GÓC (HOVER) --- */
+        .leaf:not(.turned):hover {
+            transform: rotateY(-15deg);
+            transition: transform 0.3s ease;
+        }
+
+        .leaf.turned:hover {
+            transform: rotateY(-165deg);
+            transition: transform 0.3s ease;
+        }
+
+        /* --- NỘI DUNG --- */
+        h1,
+        h2,
+        h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-color);
+            margin-top: 0;
+            line-height: 1.2;
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 1.6rem;
+            border-bottom: 2px solid var(--gold-color);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 1.1rem;
+            color: #555;
+            font-style: italic;
+            margin-bottom: 10px;
+        }
+
+        p,
+        li {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 12px;
+            text-align: justify;
+        }
+
+        .highlight-box {
+            background: rgba(184, 134, 11, 0.1);
+            border-left: 4px solid var(--gold-color);
+            padding: 15px;
+            margin: 15px 0;
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        /* ẢNH */
+        .img-container {
+            width: 100%;
+            margin: 10px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .img-frame {
+            background: #fff;
+            padding: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            border: 1px solid #ddd;
+            width: 95%;
+            height: 250px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .caption {
+            font-size: 0.8rem;
+            color: #666;
+            margin-top: 8px;
+            font-style: italic;
+            text-align: center;
+        }
+
+        /* Bìa */
+        .cover-page {
+            background-color: #2c0e0e;
+            color: #eaddcf;
+            justify-content: center;
+            align-items: center;
+            border: 3px solid var(--gold-color);
+            box-shadow: inset 0 0 50px #000;
+        }
+
+        .cover-page h1 {
+            color: #d4af37;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        /* Số trang */
+        .page-num {
+            position: absolute;
+            bottom: 15px;
+            font-family: 'Playfair Display';
+            color: #888;
+            font-size: 0.9rem;
+        }
+
+        .front .page-num {
+            right: 20px;
+        }
+
+        .back .page-num {
+            left: 20px;
+        }
+
+        /* Controls */
+        .controls {
+            position: fixed;
+            bottom: 25px;
+            display: flex;
+            gap: 20px;
+            z-index: 100;
+        }
+
+        .btn {
+            background: var(--gold-color);
+            color: #000;
+            border: none;
+            padding: 12px 30px;
+            font-family: 'Playfair Display';
+            font-weight: bold;
+            cursor: pointer;
+            border-radius: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: #fff;
+            transform: translateY(-3px);
+        }
+
+        .btn:disabled {
+            background: #555;
+            color: #888;
+            cursor: not-allowed;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="spine-anchor start" id="spineAnchor">
+        <div class="book">
+
+            <div class="leaf" id="leaf1">
+                <div class="page front cover-page">
+                    <div
+                        style="border: 1px solid var(--gold-color); padding: 30px; width: 85%; height: 85%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <p style="letter-spacing: 2px; font-size: 0.9rem;">TRIẾT HỌC MÁC - LÊNIN</p>
+                        <div style="width: 40px; height: 2px; background: var(--gold-color); margin: 20px 0;"></div>
+                        <h1 style="font-size: 1.8rem; line-height: 1.3; padding: 0 5px; margin-bottom: 20px;">
+                            CHÚNG TA KIẾM TIỀN ĐỂ SỐNG
+                            <br><span
+                                style="font-size: 0.7em; font-style: italic; text-transform: none; display: block; margin: 5px 0;">
+                                <span style="color: #fff8e1;">HAY</span></span><br>
+                            CHỈ TỒN TẠI ĐỂ KIẾM ĂN QUA NGÀY?
+                        </h1>
+                        <div style="width: 40px; height: 2px; background: var(--gold-color); margin: 20px 0;"></div>
+                        <p style="text-align: center; opacity: 0.9;">Nhóm Thuyết Trình - F4</p>
+                        <div class="img-container" style="margin-top: 20px; height: 200px;">
+                            <div class="img-frame"
+                                style="height: 100%; border: none; box-shadow: none; background: transparent;">
+                                <img src="assets/images/slide1.png" alt="Mệt mỏi sáng thứ 2"
+                                    style="opacity: 0.8; border-radius: 4px;">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page back">
+                    <h2>I. Vấn Đề Đặt Ra</h2>
+                    <div class="highlight-box">
+                        "Có bao giờ bạn cảm thấy chỉ đi làm để… kiếm tiền tồn tại?"
+                    </div>
+                    <div class="img-container">
+                        <div class="img-frame" style="transform: rotate(-1deg);">
+                            <img src="assets/images/slide2.png" alt="Vòng lặp">
+                        </div>
+                        <div class="caption">Vòng lặp: Làm -> Tiền -> Tiêu -> Mệt -> Làm</div>
+                    </div>
+                    <div class="page-num">2</div>
+                </div>
+            </div>
+
+            <div class="leaf" id="leaf2">
+                <div class="page front">
+                    <h2>II. Câu Hỏi Trung Tâm</h2>
+                    <div class="img-container">
+                        <div class="img-frame">
+                            <img src="assets/images/slide3.png" alt="Cân Money vs Life">
+                        </div>
+                    </div>
+                    <p>Chúng ta kiếm tiền để sống, hay tồn tại để kiếm ăn?</p>
+                    <p>Vì sao người trẻ dễ rơi vào vòng xoáy này?</p>
+                    <div class="page-num">3</div>
+                </div>
+                <div class="page back">
+                    <h2>III. Quan Điểm Mác-Lênin</h2>
+                    <div class="img-container">
+                        <div class="img-frame">
+                            <img src="assets/images/slide4.png" alt="Tự nhiên - Xã hội">
+                        </div>
+                    </div>
+                    <p><strong>Con người là thực thể Tự nhiên - Xã hội:</strong></p>
+                    <ul>
+                        <li>Tự nhiên: Nhu cầu sinh học.</li>
+                        <li>Xã hội: Ý nghĩa, mục đích, giá trị.</li>
+                    </ul>
+                    <p>"Sống" ≠ chỉ "Tồn tại".</p>
+                    <div class="page-num">4</div>
+                </div>
+            </div>
+
+            <div class="leaf" id="leaf3">
+                <div class="page front">
+                    <h2>IV. Bản Chất Lao Động</h2>
+                    <div class="img-container">
+                        <div class="img-frame">
+                            <img src="assets/images/slide5.png" alt="Lao động sáng tạo">
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Hoạt động có ý thức.</li>
+                        <li>Có mục đích.</li>
+                        <li>Tạo ra thế giới & chính con người.</li>
+                    </ul>
+                    <div class="page-num">5</div>
+                </div>
+                <div class="page back">
+                    <h2>V. Lao Động Lý Tưởng</h2>
+                    <div class="img-container">
+                        <div class="img-frame">
+                            <img src="assets/images/slide6.png" alt="Phát triển bản thân">
+                        </div>
+                    </div>
+                    <p>Không chỉ để tồn tại.</p>
+                    <p>Mà để <strong>phát triển</strong>:</p>
+                    <ul>
+                        <li>Trí tuệ</li>
+                        <li>Nhân cách</li>
+                        <li>Quan hệ xã hội</li>
+                    </ul>
+                    <div class="page-num">6</div>
+                </div>
+            </div>
+
+            <div class="leaf" id="leaf4">
+                <div class="page front">
+                    <h2>VI. Hiện Tượng Tha Hóa</h2>
+                    <div class="img-container">
+                        <div class="img-frame">
+                            <img src="assets/images/slide7.png" alt="Tha hóa">
+                        </div>
+                    </div>
+                    <p>Khi sản phẩm và quá trình lao động không thuộc về người làm -> Quay lại thống trị con người.</p>
+                    <div class="page-num">7</div>
+                </div>
+                <div class="page back">
+                    <h2>VII.Hình Thức Tha Hóa (1)</h2>
+                    <div class="img-container">
+                        <div class="img-frame">
+                            <img src="assets/images/slide8_1.png" alt="Tha hóa sản phẩm">
+                        </div>
+                    </div>
+                    <ul>
+                        <li><strong>Tha hóa khỏi sản phẩm:</strong> Làm nhưng không sở hữu.</li>
+                        <li><strong>Tha hóa khỏi hoạt động:</strong> Lao động lặp lại, mệt mỏi, vô nghĩa.</li>
+                    </ul>
+                    <div class="page-num">8</div>
+                </div>
+            </div>
+
+            <div class="leaf" id="leaf5">
+                <div class="page front">
+                    <h2>VII.Hình Thức Tha Hóa (2)</h2>
+                    <div class="img-container">
+                        <div class="img-frame">
+                            <img src="assets/images/slide8_2.png" alt="Mất sáng tạo">
+                        </div>
+                    </div>
+                    <ul>
+                        <li><strong>Tha hóa khỏi bản chất loài:</strong> Mất tính sáng tạo.</li>
+                        <li><strong>Tha hóa khỏi đồng loại:</strong> Cạnh tranh, lợi dụng lẫn nhau.</li>
+                    </ul>
+                    <div class="page-num">9</div>
+                </div>
+                <div class="page back">
+                    <h2>VIII. Thực Trạng Người Trẻ</h2>
+                    <div class="img-container">
+                        <div class="img-frame">
+                            <img src="assets/images/slide9.png" alt="Burnout">
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Làm để trả nợ cuộc sống.</li>
+                        <li>Không thấy trưởng thành.</li>
+                        <li>Tiền là mục đích duy nhất.</li>
+                        <li>Stress vì KPI, deadline.</li>
+                    </ul>
+                    <div class="page-num">10</div>
+                </div>
+            </div>
+
+            <div class="leaf" id="leaf6">
+                <div class="page front">
+                    <h2>IX. Phân Biệt Sống vs Tồn Tại</h2>
+                    <div class="img-container">
+                        <div class="img-frame">
+                            <img src="assets/images/slide10.png" alt="Surviving vs Living">
+                        </div>
+                    </div>
+                    <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
+                        <tr>
+                            <td style="padding:5px; border-bottom:1px solid #ccc;"><strong>Tồn tại</strong></td>
+                            <td style="padding:5px; border-bottom:1px solid #ccc;">Chỉ đáp ứng sinh học</td>
+                        </tr>
+                        <tr>
+                            <td style="padding:5px; border-bottom:1px solid #ccc;"><strong>Sống</strong></td>
+                            <td style="padding:5px; border-bottom:1px solid #ccc;">Phát triển trí tuệ, cảm xúc</td>
+                        </tr>
+                    </table>
+                    <div class="page-num">11</div>
+                </div>
+                <div class="page back">
+                    <h2>X. Giải Phóng Con Người</h2>
+                    <div class="img-container">
+                        <div class="img-frame">
+                            <img src="assets/images/slide11.png" alt="Giải phóng">
+                        </div>
+                    </div>
+                    <ul>
+                        <li><strong>Xã hội:</strong> Làm chủ lao động & sáng tạo.</li>
+                        <li><strong>Cá nhân:</strong> Chọn việc có ý nghĩa, không đo giá trị bằng lương, dùng tiền như
+                            công
+                            cụ.</li>
+                    </ul>
+                    <div class="page-num">12</div>
+                </div>
+            </div>
+
+            <div class="leaf" id="leaf7">
+                <div class="page front">
+                    <h2>XI. Kết Luận</h2>
+                    <div class="img-container">
+                        <div class="img-frame">
+                            <img src="assets/images/slide12.png" alt="Trưởng thành">
+                        </div>
+                    </div>
+                    <p>Khẳng định: <strong>Chúng ta kiếm tiền để SỐNG.</strong></p>
+                    <p>Lao động chỉ có ý nghĩa khi giúp con người phát triển toàn diện.</p>
+                    <p>-> Trở thành chủ thể, không phải công cụ.</p>
+                    <div class="page-num">13</div>
+                </div>
+                <div class="page back cover-page">
+                    <h1>HẾT</h1>
+                    <div style="width: 50px; height: 2px; background: var(--gold-color); margin: 20px 0;"></div>
+                    <p>Cảm ơn thầy cô và các bạn đã lắng nghe!</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <div class="controls">
+        <button class="btn" id="prevBtn">&larr; Trước</button>
+        <button class="btn" id="nextBtn">Tiếp &rarr;</button>
+    </div>
+
+    <script>
+        class MagazineLogic {
+            constructor() {
+                this.leaves = Array.from(document.querySelectorAll('.leaf'));
+                this.spine = document.getElementById('spineAnchor');
+                this.totalLeaves = this.leaves.length;
+                this.currentPage = 0;
+                this.isAnimating = false;
+                const animSec = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--anim-speed'));
+                this.animMs = Number.isFinite(animSec) ? animSec * 1000 : 1200;
+
+                this.init();
+            }
+
+            init() {
+                // Khởi tạo z-index: trang đầu nằm trên cùng
+                this.leaves.forEach((leaf, index) => {
+                    leaf.style.zIndex = this.totalLeaves - index;
+                });
+
+                // Xử lý click trên từng lá sách
+                this.leaves.forEach((leaf, index) => {
+                    leaf.addEventListener('click', () => {
+                        // Chỉ cho phép click trên trang hiện tại để lật
+                        if (!this.isAnimating) {
+                            if (index === this.currentPage && !leaf.classList.contains('turned')) {
+                                this.next();
+                            } else if (index === this.currentPage - 1 && leaf.classList.contains('turned')) {
+                                this.prev();
+                            }
+                        }
+                    });
+                });
+
+                document.getElementById('nextBtn').addEventListener('click', () => this.next());
+                document.getElementById('prevBtn').addEventListener('click', () => this.prev());
+
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === "ArrowRight") this.next();
+                    if (e.key === "ArrowLeft") this.prev();
+                });
+
+                this.updateButtons();
+                this.updatePosition();
+            }
+
+            next() {
+                if (this.currentPage >= this.totalLeaves || this.isAnimating) return;
+                this.isAnimating = true;
+
+                const leaf = this.leaves[this.currentPage];
+
+                // Đưa trang hiện tại lên trên cùng
+                leaf.style.zIndex = this.totalLeaves + 1;
+
+                // Lật trang
+                leaf.style.transform = "rotateY(-180deg)";
+                leaf.classList.add('turned');
+
+                this.currentPage++;
+                this.updatePosition();
+
+                setTimeout(() => {
+                    // Sau khi lật xong, đưa trang về đúng vị trí z-index
+                    leaf.style.zIndex = this.currentPage;
+                    this.isAnimating = false;
+                    this.updateButtons();
+                }, this.animMs);
+            }
+
+            prev() {
+                if (this.currentPage <= 0 || this.isAnimating) return;
+                this.isAnimating = true;
+
+                this.currentPage--;
+                const leaf = this.leaves[this.currentPage];
+                this.updatePosition();
+
+                // Đưa trang lên trên cùng
+                leaf.style.zIndex = this.totalLeaves + 1;
+
+                // Lật ngược lại
+                leaf.style.transform = "rotateY(0deg)";
+                leaf.classList.remove('turned');
+
+                setTimeout(() => {
+                    // Trả về z-index ban đầu
+                    leaf.style.zIndex = this.totalLeaves - this.currentPage;
+                    this.isAnimating = false;
+                    this.updateButtons();
+                }, this.animMs);
+            }
+
+            updateButtons() {
+                document.getElementById('prevBtn').disabled = this.currentPage === 0;
+                document.getElementById('nextBtn').disabled = this.currentPage === this.totalLeaves;
+            }
+
+            // CHỨC NĂNG CĂN CHỈNH VỊ TRÍ GÁY SÁCH / TRANG HIỂN THỊ
+            updatePosition() {
+                this.spine.classList.remove('start', 'end');
+
+                if (this.currentPage === 0) {
+                    // Trang bìa (phải) ở giữa
+                    this.spine.classList.add('start');
+                } else if (this.currentPage === this.totalLeaves) {
+                    // Trang cuối (trái) ở giữa
+                    this.spine.classList.add('end');
+                }
+                // Nếu 0 < currentPage < totalLeaves (đang xem hai trang),
+                // spine-anchor không có class nào và giữ nguyên (gáy ở giữa).
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => new MagazineLogic());
+    </script>
+
+</body>
+
+</html>
