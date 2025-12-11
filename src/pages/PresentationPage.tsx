@@ -25,7 +25,7 @@ export default function PresentationPage() {
                     {/* Flipbook iframe container */}
                     <div className="relative w-full" style={{
                         height: 'calc(100vh - 280px)',
-                        minHeight: '600px'
+                        minHeight: '800px'
                     }}>
                         <iframe
                             src="/mln111_Flipbook/index.html"
