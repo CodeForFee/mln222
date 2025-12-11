@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sống Hay Tồn Tại - Presentation</title>
+    <title>Giá Trị Thặng Dư Trong Nền Kinh Tế Thị Trường</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400&display=swap"
         rel="stylesheet">
@@ -145,7 +145,7 @@
         }
 
         h2 {
-            font-size: 1.6rem;
+            font-size: 1.4rem;
             border-bottom: 2px solid var(--gold-color);
             padding-bottom: 10px;
             margin-bottom: 15px;
@@ -160,9 +160,9 @@
 
         p,
         li {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin-bottom: 12px;
+            font-size: 0.95rem;
+            line-height: 1.55;
+            margin-bottom: 10px;
             text-align: justify;
         }
 
@@ -276,6 +276,57 @@
             cursor: not-allowed;
             opacity: 0.5;
         }
+
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.85rem;
+            margin: 10px 0;
+        }
+
+        table th,
+        table td {
+            padding: 8px 10px;
+            border: 1px solid #ccc;
+            text-align: left;
+        }
+
+        table th {
+            background: rgba(184, 134, 11, 0.15);
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        ul {
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+
+        ul li {
+            margin-bottom: 8px;
+        }
+
+        .formula-box {
+            background: linear-gradient(135deg, #f5f5dc 0%, #fff8dc 100%);
+            border: 2px solid var(--gold-color);
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: bold;
+            color: var(--accent-color);
+        }
+
+        .two-col {
+            display: flex;
+            gap: 15px;
+        }
+
+        .two-col>div {
+            flex: 1;
+        }
     </style>
 </head>
 
@@ -284,218 +335,322 @@
     <div class="spine-anchor start" id="spineAnchor">
         <div class="book">
 
+            <!-- LEAF 1: Bìa & Giới thiệu Tiền -->
             <div class="leaf" id="leaf1">
                 <div class="page front cover-page">
                     <div
                         style="border: 1px solid var(--gold-color); padding: 30px; width: 85%; height: 85%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
-                        <p style="letter-spacing: 2px; font-size: 0.9rem;">TRIẾT HỌC MÁC - LÊNIN</p>
+                        <p style="letter-spacing: 2px; font-size: 0.9rem;">KINH TẾ CHÍNH TRỊ MÁC - LÊNIN</p>
                         <div style="width: 40px; height: 2px; background: var(--gold-color); margin: 20px 0;"></div>
-                        <h1 style="font-size: 1.8rem; line-height: 1.3; padding: 0 5px; margin-bottom: 20px;">
-                            CHÚNG TA KIẾM TIỀN ĐỂ SỐNG
+                        <h1 style="font-size: 1.6rem; line-height: 1.3; padding: 0 5px; margin-bottom: 20px;">
+                            GIÁ TRỊ THẶNG DƯ
                             <br><span
                                 style="font-size: 0.7em; font-style: italic; text-transform: none; display: block; margin: 5px 0;">
-                                <span style="color: #fff8e1;">HAY</span></span><br>
-                            CHỈ TỒN TẠI ĐỂ KIẾM ĂN QUA NGÀY?
+                                <span style="color: #fff8e1;">TRONG</span></span><br>
+                            NỀN KINH TẾ THỊ TRƯỜNG
                         </h1>
                         <div style="width: 40px; height: 2px; background: var(--gold-color); margin: 20px 0;"></div>
                         <p style="text-align: center; opacity: 0.9;">Nhóm Thuyết Trình - F4</p>
-                        <div class="img-container" style="margin-top: 20px; height: 200px;">
+                        <div class="img-container" style="margin-top: 20px; height: 180px;">
                             <div class="img-frame"
                                 style="height: 100%; border: none; box-shadow: none; background: transparent;">
-                                <img src="assets/images/slide1.png" alt="Mệt mỏi sáng thứ 2"
+                                <img src="assets/images/slide1.png" alt="Kinh tế tư bản"
                                     style="opacity: 0.8; border-radius: 4px;">
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="page back">
-                    <h2>I. Vấn Đề Đặt Ra</h2>
+                    <h2>I. Nguồn Gốc Của Giá Trị Thặng Dư</h2>
+                    <h3>Tiền là gì?</h3>
                     <div class="highlight-box">
-                        "Có bao giờ bạn cảm thấy chỉ đi làm để… kiếm tiền tồn tại?"
+                        Tiền là sản vật cuối cùng của lưu thông hàng hóa, đồng thời cũng là hình thức biểu hiện đầu tiên
+                        của tư bản.
                     </div>
-                    <div class="img-container">
-                        <div class="img-frame" style="transform: rotate(-1deg);">
-                            <img src="assets/images/slide2.png" alt="Vòng lặp">
-                        </div>
-                        <div class="caption">Vòng lặp: Làm -> Tiền -> Tiêu -> Mệt -> Làm</div>
+                    <p><strong>Tiền là nền tảng cơ bản cấu thành nên TBCN</strong></p>
+                    <h3>Nguồn gốc ra đời của TBCN:</h3>
+                    <ul>
+                        <li>Tập trung một khoản tiền lớn và giao vào tay một số người.</li>
+                        <li>Bóc lột sức lao động của người khác.</li>
+                    </ul>
+                    <div class="highlight-box"
+                        style="background: rgba(128, 0, 0, 0.1); border-left-color: var(--accent-color);">
+                        <strong>Lưu ý:</strong> Không phải mọi tiền đều là tư bản, nhưng tư bản phải bắt đầu bằng hình
+                        thái tiền.
                     </div>
                     <div class="page-num">2</div>
                 </div>
             </div>
 
+            <!-- LEAF 2: Sự vận động của tiền -->
             <div class="leaf" id="leaf2">
                 <div class="page front">
-                    <h2>II. Câu Hỏi Trung Tâm</h2>
-                    <div class="img-container">
-                        <div class="img-frame">
-                            <img src="assets/images/slide3.png" alt="Cân Money vs Life">
-                        </div>
+                    <h2>II. Sự Vận Động Của Tiền</h2>
+                    <div class="formula-box">
+                        Tiền thông thường: <strong>H - T - H</strong><br>
+                        Tiền tư bản: <strong>T - H - T'</strong>
                     </div>
-                    <p>Chúng ta kiếm tiền để sống, hay tồn tại để kiếm ăn?</p>
-                    <p>Vì sao người trẻ dễ rơi vào vòng xoáy này?</p>
+                    <h3>Điểm giống nhau:</h3>
+                    <table>
+                        <tr>
+                            <th>Tiêu chí</th>
+                            <th>H - T - H và T - H - T'</th>
+                        </tr>
+                        <tr>
+                            <td>Các yếu tố</td>
+                            <td>Đều gồm Hàng hóa (H) và Tiền (T)</td>
+                        </tr>
+                        <tr>
+                            <td>Các hành vi</td>
+                            <td>Đều gồm Mua và Bán</td>
+                        </tr>
+                        <tr>
+                            <td>Vai trò của Tiền</td>
+                            <td>Tiền là vật môi giới trung gian</td>
+                        </tr>
+                        <tr>
+                            <td>Trao đổi</td>
+                            <td>Trao đổi ngang giá</td>
+                        </tr>
+                    </table>
                     <div class="page-num">3</div>
                 </div>
                 <div class="page back">
-                    <h2>III. Quan Điểm Mác-Lênin</h2>
-                    <div class="img-container">
-                        <div class="img-frame">
-                            <img src="assets/images/slide4.png" alt="Tự nhiên - Xã hội">
-                        </div>
+                    <h2>II. Sự Vận Động Của Tiền (tiếp)</h2>
+                    <h3>Điểm khác nhau về bản chất bên ngoài:</h3>
+                    <table>
+                        <tr>
+                            <th>Tiêu chí</th>
+                            <th>H - T - H</th>
+                            <th>T - H - T'</th>
+                        </tr>
+                        <tr>
+                            <td>Điểm xuất phát</td>
+                            <td>Bắt đầu bằng H, kết thúc bằng H</td>
+                            <td>Bắt đầu bằng T, kết thúc bằng T'</td>
+                        </tr>
+                        <tr>
+                            <td>Trình tự</td>
+                            <td>Bán trước - Mua sau</td>
+                            <td>Mua trước - Bán sau</td>
+                        </tr>
+                        <tr>
+                            <td>Giá trị</td>
+                            <td>T cuối = T đầu</td>
+                            <td>T' = T + ΔT</td>
+                        </tr>
+                    </table>
+                    <div class="highlight-box">
+                        <strong>Điểm mấu chốt:</strong> Sự thay đổi giá trị dồi thêm (ΔT) - đây chính là giá trị thặng
+                        dư!
                     </div>
-                    <p><strong>Con người là thực thể Tự nhiên - Xã hội:</strong></p>
-                    <ul>
-                        <li>Tự nhiên: Nhu cầu sinh học.</li>
-                        <li>Xã hội: Ý nghĩa, mục đích, giá trị.</li>
-                    </ul>
-                    <p>"Sống" ≠ chỉ "Tồn tại".</p>
                     <div class="page-num">4</div>
                 </div>
             </div>
 
+            <!-- LEAF 3: Điểm khác bản chất bên trong & Hàng hóa sức lao động -->
             <div class="leaf" id="leaf3">
                 <div class="page front">
-                    <h2>IV. Bản Chất Lao Động</h2>
-                    <div class="img-container">
-                        <div class="img-frame">
-                            <img src="assets/images/slide5.png" alt="Lao động sáng tạo">
-                        </div>
-                    </div>
-                    <ul>
-                        <li>Hoạt động có ý thức.</li>
-                        <li>Có mục đích.</li>
-                        <li>Tạo ra thế giới & chính con người.</li>
-                    </ul>
+                    <h2>II. Sự Vận Động (Bản chất bên trong)</h2>
+                    <table>
+                        <tr>
+                            <th>Tiêu chí</th>
+                            <th>H - T - H</th>
+                            <th>T - H - T'</th>
+                        </tr>
+                        <tr>
+                            <td><strong>Mục đích</strong></td>
+                            <td>Giá trị sử dụng (thỏa mãn nhu cầu sinh hoạt)</td>
+                            <td>Giá trị thặng dư (làm giàu)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Giới hạn</strong></td>
+                            <td>Có giới hạn (dừng khi đạt mục đích)</td>
+                            <td>Không giới hạn (vận động không ngừng)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Vai trò Tiền</strong></td>
+                            <td>Phương tiện lưu thông</td>
+                            <td>Tư bản (sinh ra giá trị thặng dư)</td>
+                        </tr>
+                    </table>
                     <div class="page-num">5</div>
                 </div>
                 <div class="page back">
-                    <h2>V. Lao Động Lý Tưởng</h2>
-                    <div class="img-container">
-                        <div class="img-frame">
-                            <img src="assets/images/slide6.png" alt="Phát triển bản thân">
-                        </div>
-                    </div>
-                    <p>Không chỉ để tồn tại.</p>
-                    <p>Mà để <strong>phát triển</strong>:</p>
+                    <h2>III. Hàng Hóa Sức Lao Động</h2>
+                    <h3>Định nghĩa:</h3>
                     <ul>
-                        <li>Trí tuệ</li>
-                        <li>Nhân cách</li>
-                        <li>Quan hệ xã hội</li>
+                        <li><strong>Sức lao động:</strong> Toàn bộ năng lực thể chất và tinh thần trong cơ thể con người
+                            đang sống.</li>
+                        <li><strong>Lao động:</strong> Sự vận dụng sức lao động vào quá trình sản xuất.</li>
                     </ul>
+                    <h3>Điều kiện để sức lao động trở thành hàng hóa:</h3>
+                    <ol style="font-size: 0.9rem; padding-left: 20px;">
+                        <li><strong>Tự do về thân thể:</strong> Có quyền bán sức lao động (không phải nô lệ)</li>
+                        <li><strong>Là người vô sản:</strong> Không có tư liệu sản xuất để tự tạo ra hàng hóa/sản phẩm
+                        </li>
+                    </ol>
                     <div class="page-num">6</div>
                 </div>
             </div>
 
+            <!-- LEAF 4: Thuộc tính hàng hóa sức lao động & Ví dụ thực tế -->
             <div class="leaf" id="leaf4">
                 <div class="page front">
-                    <h2>VI. Hiện Tượng Tha Hóa</h2>
-                    <div class="img-container">
-                        <div class="img-frame">
-                            <img src="assets/images/slide7.png" alt="Tha hóa">
-                        </div>
+                    <h2>III. Thuộc Tính Hàng Hóa Sức Lao Động</h2>
+                    <p>Hàng hóa sức lao động có 2 thuộc tính: <strong>Giá trị sử dụng</strong> và <strong>Giá
+                            trị</strong></p>
+                    <div class="highlight-box" style="background: rgba(0, 128, 0, 0.1); border-left-color: green;">
+                        <strong>Điểm then chốt:</strong> Hàng hóa sức lao động là nguồn gốc sinh ra giá trị mới và giá
+                        trị mới lớn hơn nó!
                     </div>
-                    <p>Khi sản phẩm và quá trình lao động không thuộc về người làm -> Quay lại thống trị con người.</p>
+                    <h3>Giá trị sức lao động bao gồm:</h3>
+                    <ul>
+                        <li>Giá trị tư liệu sinh hoạt cần thiết (vật chất, tinh thần) để tái sản xuất sức lao động</li>
+                        <li>Phí tổn đào tạo người lao động</li>
+                        <li>Giá trị tư liệu sinh hoạt nuôi con của người lao động</li>
+                    </ul>
                     <div class="page-num">7</div>
                 </div>
                 <div class="page back">
-                    <h2>VII.Hình Thức Tha Hóa (1)</h2>
-                    <div class="img-container">
-                        <div class="img-frame">
-                            <img src="assets/images/slide8_1.png" alt="Tha hóa sản phẩm">
-                        </div>
+                    <h2>IV. Ví Dụ Thực Tế: Có Bị Bóc Lột?</h2>
+                    <div class="highlight-box">
+                        Bạn là sinh viên làm nhân viên phục vụ quán trà sữa: <strong>30k/h</strong>, hợp đồng
+                        <strong>4h/ngày</strong>, mỗi tuần được 2 ly trà sữa miễn phí.
                     </div>
+                    <p>Bạn có kinh nghiệm, chỉ cần <strong>3 tiếng</strong> là xong việc. Nhưng bạn phải ở lại 1 tiếng
+                        còn lại và phụ mọi người làm việc khác.</p>
+                    <h3 style="color: var(--accent-color);">Có bóc lột không?</h3>
+                    <p><strong style="color: green;">CÓ!</strong> Vì:</p>
                     <ul>
-                        <li><strong>Tha hóa khỏi sản phẩm:</strong> Làm nhưng không sở hữu.</li>
-                        <li><strong>Tha hóa khỏi hoạt động:</strong> Lao động lặp lại, mệt mỏi, vô nghĩa.</li>
+                        <li>3 giờ = <strong>thời gian lao động tất yếu</strong></li>
+                        <li>1 giờ cuối = <strong>thời gian lao động thặng dư</strong> (không được trả thêm)</li>
+                        <li>Bạn vẫn tạo ra giá trị mới (tăng năng suất, làm sạch cửa hàng...)</li>
                     </ul>
                     <div class="page-num">8</div>
                 </div>
             </div>
 
+            <!-- LEAF 5: Định nghĩa giá trị thặng dư & Tư bản bất biến/khả biến -->
             <div class="leaf" id="leaf5">
                 <div class="page front">
-                    <h2>VII.Hình Thức Tha Hóa (2)</h2>
-                    <div class="img-container">
-                        <div class="img-frame">
-                            <img src="assets/images/slide8_2.png" alt="Mất sáng tạo">
-                        </div>
+                    <h2>V. Định Nghĩa Giá Trị Thặng Dư</h2>
+                    <div class="highlight-box" style="font-style: normal;">
+                        <strong>Giá trị thặng dư (m)</strong> là một bộ phận của giá trị mới dôi ra ngoài giá trị sức
+                        lao động do công nhân tạo ra và bị nhà tư bản chiếm đoạt. Đó là <em>lao động không công</em> của
+                        công nhân.
                     </div>
-                    <ul>
-                        <li><strong>Tha hóa khỏi bản chất loài:</strong> Mất tính sáng tạo.</li>
-                        <li><strong>Tha hóa khỏi đồng loại:</strong> Cạnh tranh, lợi dụng lẫn nhau.</li>
-                    </ul>
+                    <p><strong>Theo lý luận Mác - Lênin:</strong> Bất kỳ ai phải bán sức lao động để tồn tại, mà người
+                        mua sử dụng sức lao động đó để sản xuất ra giá trị thặng dư, đều là người bị bóc lột.</p>
+                    <h3>Đối tượng bị bóc lột:</h3>
+                    <p>Chủ yếu là <strong>Giai cấp Công nhân làm thuê</strong> - những người không có hoặc không đủ tư
+                        liệu sản xuất.</p>
                     <div class="page-num">9</div>
                 </div>
                 <div class="page back">
-                    <h2>VIII. Thực Trạng Người Trẻ</h2>
-                    <div class="img-container">
-                        <div class="img-frame">
-                            <img src="assets/images/slide9.png" alt="Burnout">
+                    <h2>V. Tiền Công & Các Loại Tư Bản</h2>
+                    <div class="highlight-box">
+                        <strong>Tiền công:</strong> Là giá cả của hàng hóa sức lao động, là bộ phận giá trị mới do chính
+                        người lao động tạo ra. <em>Người lao động tự trả công cho mình qua lao động của mình.</em>
+                    </div>
+                    <div class="two-col">
+                        <div style="background: rgba(0,0,128,0.1); padding: 10px; border-radius: 5px;">
+                            <h3 style="color: #000080;">Tư bản bất biến (c)</h3>
+                            <ul style="font-size: 0.85rem;">
+                                <li>Giá trị nhà xưởng, máy móc</li>
+                                <li>Nguyên liệu, nhiên liệu</li>
+                                <li>Không tạo ra giá trị thặng dư</li>
+                            </ul>
+                        </div>
+                        <div style="background: rgba(0,128,0,0.1); padding: 10px; border-radius: 5px;">
+                            <h3 style="color: #006400;">Tư bản khả biến (v)</h3>
+                            <ul style="font-size: 0.85rem;">
+                                <li>Giá trị sức lao động</li>
+                                <li>Tạo ra giá trị thặng dư</li>
+                                <li>Nguồn gốc lợi nhuận</li>
+                            </ul>
                         </div>
                     </div>
-                    <ul>
-                        <li>Làm để trả nợ cuộc sống.</li>
-                        <li>Không thấy trưởng thành.</li>
-                        <li>Tiền là mục đích duy nhất.</li>
-                        <li>Stress vì KPI, deadline.</li>
-                    </ul>
                     <div class="page-num">10</div>
                 </div>
             </div>
 
+            <!-- LEAF 6: Công thức & Các phương pháp sản xuất GTTD -->
             <div class="leaf" id="leaf6">
                 <div class="page front">
-                    <h2>IX. Phân Biệt Sống vs Tồn Tại</h2>
-                    <div class="img-container">
-                        <div class="img-frame">
-                            <img src="assets/images/slide10.png" alt="Surviving vs Living">
-                        </div>
+                    <h2>VI. Công Thức Giá Trị Thặng Dư</h2>
+                    <h3>1. Tỷ suất giá trị thặng dư (m')</h3>
+                    <p style="font-size: 0.85rem;">Thước đo tương đối thể hiện trình độ/cường độ bóc lột:</p>
+                    <div class="formula-box">
+                        m' = (m / v) × 100%
                     </div>
-                    <table style="width:100%; border-collapse:collapse; font-size:0.85rem;">
-                        <tr>
-                            <td style="padding:5px; border-bottom:1px solid #ccc;"><strong>Tồn tại</strong></td>
-                            <td style="padding:5px; border-bottom:1px solid #ccc;">Chỉ đáp ứng sinh học</td>
-                        </tr>
-                        <tr>
-                            <td style="padding:5px; border-bottom:1px solid #ccc;"><strong>Sống</strong></td>
-                            <td style="padding:5px; border-bottom:1px solid #ccc;">Phát triển trí tuệ, cảm xúc</td>
-                        </tr>
-                    </table>
+                    <p style="font-size: 0.85rem;">Hoặc:</p>
+                    <div class="formula-box" style="font-size: 0.95rem;">
+                        m' = (Thời gian lao động thặng dư / Thời gian lao động tất yếu) × 100%
+                    </div>
+                    <h3>2. Khối lượng giá trị thặng dư (M)</h3>
+                    <p style="font-size: 0.85rem;">Thước đo tuyệt đối thể hiện quy mô bóc lột:</p>
+                    <div class="formula-box">
+                        M = m' × V
+                    </div>
+                    <p style="font-size: 0.8rem;"><em>(V = Tổng tư bản khả biến = Tổng tiền công chi ra)</em></p>
                     <div class="page-num">11</div>
                 </div>
                 <div class="page back">
-                    <h2>X. Giải Phóng Con Người</h2>
-                    <div class="img-container">
-                        <div class="img-frame">
-                            <img src="assets/images/slide11.png" alt="Giải phóng">
-                        </div>
-                    </div>
-                    <ul>
-                        <li><strong>Xã hội:</strong> Làm chủ lao động & sáng tạo.</li>
-                        <li><strong>Cá nhân:</strong> Chọn việc có ý nghĩa, không đo giá trị bằng lương, dùng tiền như
-                            công
-                            cụ.</li>
+                    <h2>VII. Các Phương Pháp Sản Xuất GTTD</h2>
+                    <h3 style="color: #8B0000;">1. Giá trị thặng dư tuyệt đối</h3>
+                    <p style="font-size: 0.9rem;">Thu được bằng cách <strong>kéo dài ngày lao động</strong> vượt quá
+                        thời gian lao động tất yếu, trong khi năng suất và giá trị sức lao động không đổi.</p>
+                    <ul style="font-size: 0.85rem;">
+                        <li>Kéo dài giờ làm việc</li>
+                        <li>Tăng cường độ lao động (mức độ khẩn trương)</li>
                     </ul>
+                    <h3 style="color: #006400;">2. Giá trị thặng dư tương đối</h3>
+                    <p style="font-size: 0.9rem;">Thu được nhờ <strong>rút ngắn thời gian lao động tất yếu</strong>, từ
+                        đó kéo dài thời gian lao động thặng dư.</p>
+                    <h3 style="color: #4B0082;">3. Giá trị thặng dư siêu ngạch</h3>
+                    <p style="font-size: 0.9rem;">Thu được giá trị thặng dư <strong>trội hơn so với các xí nghiệp
+                            khác</strong> (nhờ cải tiến công nghệ, nâng cao năng suất).</p>
                     <div class="page-num">12</div>
                 </div>
             </div>
 
+            <!-- LEAF 7: Chu chuyển tư bản & Kết luận -->
             <div class="leaf" id="leaf7">
                 <div class="page front">
-                    <h2>XI. Kết Luận</h2>
-                    <div class="img-container">
-                        <div class="img-frame">
-                            <img src="assets/images/slide12.png" alt="Trưởng thành">
+                    <h2>VIII. Tuần Hoàn & Chu Chuyển Tư Bản</h2>
+                    <h3>Chu chuyển tư bản:</h3>
+                    <p style="font-size: 0.9rem;">Là sự vận động của tư bản được xét là quá trình định kỳ, thường xuyên
+                        lặp đi lặp lại và đổi mới theo thời gian.</p>
+                    <div class="two-col">
+                        <div style="background: rgba(184, 134, 11, 0.1); padding: 10px; border-radius: 5px;">
+                            <h3>Thời gian chu chuyển</h3>
+                            <p style="font-size: 0.85rem;">= Thời gian sản xuất + Thời gian lưu thông</p>
+                        </div>
+                        <div style="background: rgba(184, 134, 11, 0.1); padding: 10px; border-radius: 5px;">
+                            <h3>Tốc độ chu chuyển</h3>
+                            <p style="font-size: 0.85rem;">= Số lần tư bản quay trở lại hình thái ban đầu cùng GTTD
+                                trong 1 năm</p>
                         </div>
                     </div>
-                    <p>Khẳng định: <strong>Chúng ta kiếm tiền để SỐNG.</strong></p>
-                    <p>Lao động chỉ có ý nghĩa khi giúp con người phát triển toàn diện.</p>
-                    <p>-> Trở thành chủ thể, không phải công cụ.</p>
+                    <div class="highlight-box" style="margin-top: 15px;">
+                        <strong>Mục tiêu của nhà tư bản:</strong> Rút ngắn thời gian chu chuyển / đẩy nhanh tốc độ chu
+                        chuyển → Thu hiệu quả kinh doanh cao hơn!
+                    </div>
                     <div class="page-num">13</div>
                 </div>
                 <div class="page back cover-page">
-                    <h1>HẾT</h1>
-                    <div style="width: 50px; height: 2px; background: var(--gold-color); margin: 20px 0;"></div>
-                    <p>Cảm ơn thầy cô và các bạn đã lắng nghe!</p>
+                    <div style="text-align: center;">
+                        <h1 style="font-size: 2rem;">KẾT LUẬN</h1>
+                        <div style="width: 50px; height: 2px; background: var(--gold-color); margin: 20px auto;"></div>
+                        <div style="text-align: left; padding: 0 20px; font-size: 0.95rem;">
+                            <p>✓ Giá trị thặng dư là <strong>bản chất của sự bóc lột</strong> trong CNTB</p>
+                            <p>✓ Nguồn gốc: <strong>Hàng hóa sức lao động</strong></p>
+                            <p>✓ 3 phương pháp sản xuất: <strong>Tuyệt đối, Tương đối, Siêu ngạch</strong></p>
+                        </div>
+                        <div style="width: 50px; height: 2px; background: var(--gold-color); margin: 20px auto;"></div>
+                        <p>Cảm ơn thầy cô và các bạn đã lắng nghe!</p>
+                    </div>
                 </div>
             </div>
         </div>
