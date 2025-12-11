@@ -105,8 +105,12 @@ export default function IntroSection() {
                                     </blockquote>
 
                                     <div className="flex items-center gap-4">
-                                        <div className="w-12 h-12 rounded-none bg-[var(--color-crimson)] flex items-center justify-center text-xl">
-                                            ☭
+                                        <div className="w-12 h-12 flex-shrink-0">
+                                            <img
+                                                src="/images/KarlMarx.jpg"
+                                                alt="Karl Marx"
+                                                className="w-full h-full object-cover border border-[var(--color-crimson)]"
+                                            />
                                         </div>
                                         <div>
                                             <div className="text-white font-semibold" style={{ fontFamily: 'var(--font-display)' }}>

@@ -12,7 +12,7 @@ export default function Footer() {
                     {/* Brand */}
                     <div className="md:col-span-5">
                         <div className="flex items-center gap-3 mb-5">
-                            <span className="text-3xl text-[var(--color-crimson)]">☭</span>
+
                             <div>
                                 <span
                                     className="text-white font-semibold text-lg block"

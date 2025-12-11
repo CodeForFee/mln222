@@ -90,20 +90,6 @@ export const galleryImages: GalleryImage[] = [
         caption: 'Vô sản toàn thế giới, Đoàn kết lại!',
         source: 'www.baoquankhu4.com.vn',
         category: 'illustration'
-    },
-    {
-        id: 'hammer-sickle-1',
-        url: 'https://upload.wikimedia.org/wikipedia/commons/7/7e/Hammer_and_sickle.svg',
-        caption: 'Búa liềm - Biểu tượng của chủ nghĩa cộng sản',
-        source: 'Wikimedia',
-        category: 'illustration'
-    },
-    {
-        id: 'red-star-1',
-        url: 'https://images.baodantoc.vn/uploads/2022/Th%C3%A1ng%208/Ng%C3%A0y_31/Nga/quockyvietnam-copy-7814.jpg',
-        caption: 'Ngôi sao đỏ năm cánh',
-        source: 'www.baodantoc.vn',
-        category: 'illustration'
     }
 ];
 

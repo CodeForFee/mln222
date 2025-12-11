@@ -54,7 +54,7 @@ export default function AboutPage() {
                                         <div className="inline-flex items-center gap-2 px-3 py-1 bg-[var(--color-crimson)]/15 
                                         text-[var(--color-crimson)] rounded-lg text-sm font-medium mb-1"
                                         >
-                                            <span className="text-base">☭</span>
+
                                             <span>Triết học Mác-Lênin</span>
                                         </div>
                                         <h2 className="text-4xl font-bold text-white" style={{ fontFamily: 'var(--font-display)' }}>

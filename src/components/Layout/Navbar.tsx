@@ -39,13 +39,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between h-20">
                     {/* Logo */}
                     <Link to="/" className="flex items-center gap-3 group">
-                        <motion.span
-                            whileHover={{ rotate: 180 }}
-                            transition={{ duration: 0.5 }}
-                            className="text-3xl text-[var(--color-crimson)]"
-                        >
-                            ☭
-                        </motion.span>
+
                         <div className="hidden sm:block">
                             <span
                                 className="text-white font-semibold text-lg tracking-tight block leading-tight"
