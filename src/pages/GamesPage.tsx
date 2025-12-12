@@ -11,8 +11,8 @@ const cards = [
     {
         id: 'games',
         title: 'Trò Chơi',
-        subtitle: 'Quiz tương tác',
-        description: 'Tham gia trò chơi quiz thú vị để kiểm tra và củng cố kiến thức về triết học Mác – Lênin.',
+        subtitle: 'Mini Game',
+        description: 'Tham gia trò chơi mini game thú vị',
         icon: PuzzlePieceIcon,
         color: 'crimson',
         link: 'https://693af87714834c90c667069f--mln2-team5.netlify.app',
